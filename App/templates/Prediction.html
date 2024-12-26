@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}💧 Water Purity Prediction{% endblock %}
+{% block content %}
+<div style="text-align: center; margin: 20px;">
+    <h1 style="color: #3498db; font-size: 2.5em;">💧 Water Purity Prediction 🌿</h1>
+    <p style="color: #2c3e50; font-size: 1.2em;">Enter the parameters below to check the purity of water 🧪</p>
+</div>
+
+<form method="post" action="/prediction" style="max-width: 600px; margin: 0 auto; background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+    <label for="ph">🌡️ pH:</label>
+    <input type="number" step="0.01" id="ph" name="ph" class="form-input" required><br><br>
+    
+    <label for="hardness">🧱 Hardness:</label>
+    <input type="number" step="0.01" id="hardness" name="hardness" class="form-input" required><br><br>
+    
+    <label for="solids">⚙️ Solids:</label>
+    <input type="number" step="0.01" id="solids" name="solids" class="form-input" required><br><br>
+    
+    <label for="chloramines">☣️ Chloramines:</label>
+    <input type="number" step="0.01" id="chloramines" name="chloramines" class="form-input" required><br><br>
+    
+    <label for="sulfate">🧪 Sulfate:</label>
+    <input type="number" step="0.01" id="sulfate" name="sulfate" class="form-input" required><br><br>
+    
+    <label for="conductivity">🔌 Conductivity:</label>
+    <input type="number" step="0.01" id="conductivity" name="conductivity" class="form-input" required><br><br>
+    
+    <label for="organic_carbon">🌿 Organic Carbon:</label>
+    <input type="number" step="0.01" id="organic_carbon" name="organic_carbon" class="form-input" required><br><br>
+    
+    <label for="trihalomethanes">💨 Trihalomethanes:</label>
+    <input type="number" step="0.01" id="trihalomethanes" name="trihalomethanes" class="form-input" required><br><br>
+    
+    <label for="turbidity">🌊 Turbidity:</label>
+    <input type="number" step="0.01" id="turbidity" name="turbidity" class="form-input" required><br><br>
+    
+    <button type="submit" style="background-color: #3498db; color: white; padding: 10px 20px; font-size: 1.2em; border: none; border-radius: 5px; cursor: pointer;">🔍 Predict</button>
+</form>
+
+{% if result %}
+<div style="text-align: center; margin-top: 20px;">
+    <h2 style="color: #27ae60; font-size: 2em;">Result: {{ result }}</h2>
+    {% if result == "Potable" %}
+    <p style="font-size: 1.5em;">✅ The water is safe to drink!</p>
+    {% else %}
+    <p style="font-size: 1.5em; color: #e74c3c;">❌ The water is not safe to drink!</p>
+    {% endif %}
+</div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Water Quality Prediction{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav style="background-color: #3498db; padding: 10px;">
+        <ul style="list-style: none; display: flex; justify-content: center; margin: 0; padding: 0;">
+            <li style="margin: 0 20px;"><a href="/" style="color: white; text-decoration: none; font-size: 1.2em;">🏠 Home</a></li>
+            <li style="margin: 0 20px;"><a href="/prediction" style="color: white; text-decoration: none; font-size: 1.2em;">🔍 Predict</a></li>
+            <li style="margin: 0 20px;"><a href="/about" style="color: white; text-decoration: none; font-size: 1.2em;">ℹ️ About</a></li>
+        </ul>
+    </nav>
+
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
